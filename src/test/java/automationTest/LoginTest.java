@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.LoginPage;
 
 
 public class LoginTest {
@@ -20,10 +21,12 @@ public class LoginTest {
 
     @Test
     public void login() {
-        driver.findElement(By.name("uid")).sendKeys("1303");
-        driver.findElement(By.name("password")).sendKeys("Guru99");
-        driver.findElement(By.name("btnLogin")).click();
-    }
+//        driver.findElement(By.name("uid")).sendKeys("1303");
+//        driver.findElement(By.name("password")).sendKeys("Guru99");
+//        driver.findElement(By.name("btnLogin")).click();
 
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login("1303", "Guru99");
+    }
 
 }
