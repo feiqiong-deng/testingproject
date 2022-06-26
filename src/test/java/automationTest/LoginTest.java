@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
 
-
 public class LoginTest {
     String projectPath = System.getProperty("user.dir");
     private WebDriver driver = null;

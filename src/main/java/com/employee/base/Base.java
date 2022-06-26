@@ -1,4 +1,4 @@
-package main.java.com.employee.base;
+package com.employee.base;
 
 public class Base {
 }
