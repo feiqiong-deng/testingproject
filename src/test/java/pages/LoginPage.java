@@ -9,8 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage {
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage() {
+
     }
 
     @FindBy(how = How.NAME, using = "uid")
@@ -22,9 +22,13 @@ public class LoginPage extends BasePage {
     @FindBy(how = How.NAME, using = "btnLogin")
     public WebElement btnLogin;
 
-    public void login(String username, String password) {
+    @FindBy(how = How.LINK_TEXT, using = "Mini Statement")
+    public WebElement linkStatement;
+
+    public StatementPage login(String username, String password) {
         txtUserName.sendKeys(username);
         txtPassword.sendKeys(password);
         btnLogin.submit();
+        return getInstance(StatementPage.class);
     }
 }

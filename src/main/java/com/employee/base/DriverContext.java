@@ -1,4 +1,7 @@
-package main.java.com.employee.base;
+package com.employee.base;
+
+import org.openqa.selenium.WebDriver;
 
 public class DriverContext {
+    public static WebDriver driver;
 }
