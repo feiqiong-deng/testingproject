@@ -1,6 +1,6 @@
 package automationTest;
 
-import com.employee.base.Base;
+import com.employee.base.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -10,17 +10,20 @@ import pages.HomePage;
 import pages.LoginPage;
 
 import static com.employee.base.Base.currentPage;
+import static com.employee.base.DriverContext.browser;
 import static com.employee.base.DriverContext.driver;
 
-public class LoginTest extends Base {
-    String projectPath = System.getProperty("user.dir");
+public class LoginTest extends FrameworkInitialize {
+//    String projectPath = System.getProperty("user.dir");
 //    private WebDriver driver = null;
 
     @Before
     public void Initialize() {
-        System.setProperty("webdriver.chrome.driver", projectPath + "/src/main/resources/chromedriver");
-        driver = new ChromeDriver();
-        driver.navigate().to("https://demo.guru99.com/");
+//        System.setProperty("webdriver.chrome.driver", projectPath + "/src/main/resources/chromedriver");
+//        driver = new ChromeDriver();
+//        driver.navigate().to("https://demo.guru99.com/");
+        initializeBrowser(BrowserType.CHROME);
+        browser.goToUrl("https://demo.guru99.com/");
     }
 
     @Test
