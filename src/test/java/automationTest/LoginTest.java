@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
 import pages.LoginPage;
+import utilities.ExcelUtil;
 
 import static com.employee.base.Base.currentPage;
 import static com.employee.base.DriverContext.browser;
@@ -24,6 +25,12 @@ public class LoginTest extends FrameworkInitialize {
 //        driver.navigate().to("https://demo.guru99.com/");
         initializeBrowser(BrowserType.CHROME);
         browser.goToUrl("https://demo.guru99.com/");
+        try {
+            ExcelUtil excelUtil = new ExcelUtil(System.getProperty("user.dir")
+                    + "/src/main/resources/data.xls");
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
     }
 
     @Test
@@ -40,10 +47,12 @@ public class LoginTest extends FrameworkInitialize {
 //        LoginPage loginPage = homePage.clickLogin();
 
 //        Thread.sleep(1000);
-        currentPage = currentPage.as(LoginPage.class).login("1303", "Guru99");
-
+//        currentPage.as(LoginPage.class).login("1303", "Guru99");
 //        loginPage.login("1303", "Guru99");
 
+        // DDT(Data Driven Test) from Excel
+        currentPage.as(LoginPage.class).login(ExcelUtil.ReadCell("UserName",1),
+                ExcelUtil.ReadCell("Password",1));
 
     }
 
