@@ -3,16 +3,11 @@ package automationTest;
 import com.employee.base.*;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtil;
 
-import static com.employee.base.Base.currentPage;
 import static com.employee.base.DriverContext.browser;
-import static com.employee.base.DriverContext.driver;
 
 public class LoginTest extends FrameworkInitialize {
 //    String projectPath = System.getProperty("user.dir");

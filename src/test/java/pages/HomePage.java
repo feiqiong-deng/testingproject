@@ -18,4 +18,9 @@ public class HomePage extends BasePage {
 //        return new LoginPage();
         return getInstance(LoginPage.class);
     }
+
+
+    public boolean isHomePage() {
+        return login.isDisplayed();
+    }
 }

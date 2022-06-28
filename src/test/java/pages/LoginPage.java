@@ -31,4 +31,5 @@ public class LoginPage extends BasePage {
         btnLogin.submit();
         return getInstance(StatementPage.class);
     }
+
 }
